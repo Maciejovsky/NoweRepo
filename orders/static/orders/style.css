@@ -1,0 +1,132 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#khra {
+    color: pink;
+}
+
+.truncate-3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    width: calc(100%);
+}
+
+.cat-img {
+    width: 100%;
+    height: 15em;
+    object-fit: cover;
+    object-position: center center;
+}
+
+body {
+    background-image: url(./../img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    backdrop-filter: brightness(0.9887);
+}
+
+#card-tbl tbody tr:hover {
+    cursor: pointer !important;
+}
+
+#login-box {
+    width: 100% !important
+}
+
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css);
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container{
+	display: flex;
+	align-items: auto;
+	justify-content: auto;
+	height: auto;
+}
+
+.rating-wrap{
+	max-width: auto;
+	margin: auto;
+	padding: auto;
+	box-shadow: 0 0 3px 0 rgba(0,0,0,.0);
+	text-align: center;
+}
+
+.center{
+	width: 162px;
+	margin: auto;
+}
+
+
+.rating-value{
+	width: 110px;
+	margin: 40px auto 0;
+	padding: 10px 5px;
+	text-align: center;
+	box-shadow: inset 0 0 2px 1px rgba(46,204,113,.0);
+}
+
+/*styling star rating*/
+.rating{
+	border: none;
+	float: left;
+}
+
+.rating > input{
+	display: none;
+}
+
+.rating > label:before{
+	content: '\f005';
+	font-family: FontAwesome;
+	margin: 5px;
+	font-size: 1.5rem;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.rating > .half:before{
+	content: '\f089';
+	position: absolute;
+	cursor: pointer;
+}
+
+
+.rating > label{
+	color: #ddd;
+	float: right;
+	cursor: pointer;
+}
+
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label{
+	color: #2ce679;
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label,
+.rating > input:checked ~ label:hover ~ label{
+	color: #2ddc76;
+}
+
+.checked {
+    color: red;
+}
+
+.my-btn {
+    background-color: inherit !important;
+    border: 0 !important;
+}

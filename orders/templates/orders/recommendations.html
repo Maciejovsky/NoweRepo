@@ -1,0 +1,38 @@
+{% extends 'orders/header.html' %}
+{% load static %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="card rounded-0" style="width: 18rem; margin: 20px;"> <!-- The col-sm-4 stuff is that if its on a small screen it will take up a third of the widths-->
+            {% if object %}
+            <img src="{{object.image.url}}" class="card-img-top cat-img rounded-0" alt="image for meal item" style="width:100%;">
+            <div class="card-body">
+              <h5 class="card-title" >{{object.title}}</h5>
+              <p class="card-text truncate-3">{{object.sub_title|striptags}}</p>
+              <div class="container">
+		        <div class="rating-wrap">
+			      <div class="center">
+            <form class="rate-form" action="" method="POST" id="{{object.id}}">
+              {% csrf_token %}
+                <button type="submit" class = "fa fa-star" id="1"  ></button>
+                <button type="submit" class = "fa fa-star" id="2" ></button>
+                <button type="submit" class = "fa fa-star" id="3" ></button>
+                <button type="submit" class = "fa fa-star" id="4"  ></button>
+                <button type="submit" class = "fa fa-star" id="5"  ></button>
+            </form>
+                    <a href ="recommendations"><button class="btn btn-primary mt-3">Next</button></a>
+			      </div>
+            <div id="confirm-box"></div>
+		        </div>
+	          </div>
+            </div>
+          </div>
+          {% else %}
+          <div class="row justify-content-center">
+            <h3>No meals to rate! :(</h3>
+          </div>
+          {% endif %}
+      </div>
+    </div>
+{% endblock %}
+
